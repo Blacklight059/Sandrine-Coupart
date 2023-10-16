@@ -12,7 +12,7 @@
             {{ encore_entry_link_tags('app') }}
 
             <!-- Renders a link tag (if your module requires any CSS)-->
-            <link rel="stylesheet" href="/build/app.css"> 
+            <link rel="stylesheet" href="/build/app.scss"> 
         {% endblock %}
 
         {% block javascripts %}
@@ -25,39 +25,43 @@
         {% endblock %}
     </head>
     <body class="grid-wrapper">
-        <div id="mainContentWithHeader" class="col-lg-8 col-sm-11 mx-auto text-center mainContentWithHeader">
+        <div id="mainContentWithHeader" class="col-lg-8 col-sm-11 mx-auto p-0 text-center mainContentWithHeader">
             <nav class="navbar navbar-expand">
                 <a class="navbar-brand" href="">Sandrine Coupart</a>
                 <div class="collapse navbar-collapse" id="mobileMenu">
-                    <ul class="navbar-nav ml-auto mt-2 ">
+                    <ul id="connexion" class="navbar-nav ml-auto mt-2 connexion">
                         {% if app.user %}
                         <li class="nav-item">
                             <span class="nav-link">Bienvenue {{ app.user.firstname }}!</span>
                         </li>
                         {% endif %}
-
                         <li class="nav-item">
                             <a class="nav-link" href="">Connexion</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <nav class="navbar navbar-expand">                    
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav mt-2 mt-lg-0">
-
+            <nav class="navbar navbar-expand-custom navbar-mainbg">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <div class="hori-selector">
+                            <div class="left">
+                            </div>
+                            <div class="right">
+                            </div>
+                        </div>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Accueil</a>
+                            <a class="nav-link" href="javascript:void(0);">Accueil</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="javascript:void(0);">Recettes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Recettes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Contact</a>
+                            <a class="nav-link" href="javascript:void(0);">Contact</a>
                         </li>
                     </ul>
                 </div>
-            </nav> 
+            </nav>
         {% block body %}{% endblock %}
         
         </div>
