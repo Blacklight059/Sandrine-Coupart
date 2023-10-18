@@ -1,5 +1,11 @@
 /* assets/styles/app.scss */
+
+
 @import '~bootstrap/scss/bootstrap';
+
+html {
+    height: 100%;
+}
 body {
     background-color: #67AFAC;
 }
@@ -119,7 +125,7 @@ i {
 }
 
 
-@media(min-width: 992px){
+@media(min-width: 450px){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
 	    flex-flow: row nowrap;
@@ -142,7 +148,7 @@ i {
 }
 
 
-@media (max-width: 991px){
+@media (max-width: 450px){
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}
@@ -172,4 +178,23 @@ i {
 		bottom: -25px;
 		left: -25px;
 	}
+}
+/*----------bootstrap-Homepage-css------------*/
+#description {
+    background-color: #C6D3B7;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mainCenter {
+    background-color: #F9F2D9;
+    padding: 0;
+}
+
+#footer {
+    color: #fff;
+    background-color: #4A7B59;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
