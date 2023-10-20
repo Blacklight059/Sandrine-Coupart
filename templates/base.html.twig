@@ -25,8 +25,8 @@
         {% endblock %}
     </head>
     <body class="container-fluid h-100">
-        <div class="flex--expand-v h-100 col-lg-8 col-sm-11 mx-auto text-center mainCenter">
-            <header id="mainContentWithHeader" class="flex--expand-v mainContentWithHeader">
+        <div class="container-fluid col-lg-8 col-sm-11 mx-auto text-center mainCenter">
+            <header id="mainContentWithHeader" class="container-fluid mainContentWithHeader">
                 <nav class="navbar navbar-expand">
                     <a class="navbar-brand" href="">Sandrine Coupart</a>
                     <div class="collapse navbar-collapse" id="mobileMenu">
@@ -65,13 +65,13 @@
                 </nav>
             </header>        
             {% block body %}{% endblock %}
-            <footer id="footer" class="flex--expand-v footer">
+            <footer id="footer" class="container-fluid footer">
                 <ul>
                     <li class="list-group-item">
-                        <a>Mentions légales</a>
+                        <a class="nav-link" href="{{ path('app_legal_notice') }}">Mentions légales</a>
                     </li>
                     <li class="list-group-item">
-                        <a>Politiques de confidentialités</a>
+                        <a class="nav-link" href="{{ path('app_privacy_policy') }}">Politiques de confidentialités</a>
                     </li>
                 </ul>
                 

@@ -12,10 +12,13 @@ body {
 
 #mainContentWithHeader {
     background-color: #F9F2D9;
+    padding: 0;
 }
 
 #connexion {
     background-color: #8DBFA9;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #menuNav {
@@ -180,10 +183,16 @@ i {
 	}
 }
 /*----------bootstrap-Homepage-css------------*/
-#description {
+.main {
     background-color: #C6D3B7;
     margin-top: 30px;
     margin-bottom: 30px;
+    padding: 15px;
+}
+
+h2, h3 {
+    margin: 15px;
+    padding: 15px;
 }
 
 .mainCenter {
@@ -194,7 +203,9 @@ i {
 #footer {
     color: #fff;
     background-color: #4A7B59;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+}
+
+h2 {
+    margin: auto;
 }
