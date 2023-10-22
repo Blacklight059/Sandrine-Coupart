@@ -204,8 +204,19 @@ h2, h3 {
     color: #fff;
     background-color: #4A7B59;
     width: 100%;
+    padding: 2.5rem;
+    font-size: 1rem;
 }
 
 h2 {
     margin: auto;
+}
+
+.nav-link {
+    padding: 1rem;
+}
+
+.galery-product {
+    text-align: center;
+    float: left;
 }

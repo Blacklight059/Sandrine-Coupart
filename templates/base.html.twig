@@ -51,14 +51,20 @@
                                 <div class="right">
                                 </div>
                             </div>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);">Accueil</a>
+                            <li class="nav-item {{ app.request.get('_route') == 'Homepage' ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ path('Homepage') }}">Accueil</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="javascript:void(0);">Recettes</a>
+                                <a class="nav-link" href="">Recettes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);">Contact</a>
+                                <a class="nav-link" href="">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Mes services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">A propos</a>
                             </li>
                         </ul>
                     </div>

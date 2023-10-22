@@ -4,15 +4,35 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
 </style>
 <main class="flex--expand-v">
-    <div id="main" class="col-lg-8 col-sm-11 mx-auto text-center">
-        <h3>Sandrine Coupart</h3>
-        <p>Présentation :</p>
-        
-        This friendly message is coming from:
+    <div id="main" class="col-lg-8 col-sm-11 mx-auto text-center main">
+        <h2>Sandrine Coupart</h2>            
+            <div class="gallery_product d-inline col-lg-4 col-md-6 col-12 align-baseline">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img src={{asset('media/profil.jpg')}} alt="profil" id="img-profil" class="img-fluid img-thumbnail active">
+                </a>
+            </div>    
+            <div class="d-inline align-text-top">
+                <h5>Présentation :</h5>
+                <p>« Diététicienne-nutritionniste diplômée de l'académie de Versailles et titulaire d'une licence STAPS APA-Santé, mes consultations s'adressent à tous : que vous souhaitiez adapter votre alimentation à votre pathologie, une allergie, une intolérance, un trouble des conduites alimentaires, un choix de vie ; que vous souhaitiez améliorer vos performances sportives, votre poids, votre bilan sanguin, votre confort digestif ; ou que vous souhaitiez simplement prendre soin de vous, de vos proches et de votre santé. »</p>
+                <h5>Mes diplômes et formations</h5>
+                <ul>
+                    <li>Licence STAPS APA-Santé (Université Paris-Sud 2014)</li>
+                    <li>B.T.S Diététique (2017)</li>
+                    <li>Initiation à l'Aromathérapie (Fédération Française d'Aromathérapie 2019)</li>
+                    <li>Formation Diététique du sport, Alimentation du sportif d'endurance (CFDC 2020)</li>
+                    <li>Formation Diététique Psycho-comportementale (CFDC 2020)</li>
+                    <li>Formation TCA, Diététique et TCC (CFDC 2020)</li>
+                    <li>Formation à l'approche bio-psycho-sensorielle de l'obésité, du surpoids, et des troubles du comportement alimentaire associés (G.R.O.S 2021)</li>
+                    <li>Diplôme Universitaire Alimentations végétariennes (Sorbonne Université 2022)</li>
+                    <li>Formation à la thérapie d’acceptation et d’engagement (ACT) - Gestion du poids et flexibilité  psychologique (CFDC 2023)</li>
+                    <li>Formation Praticien en Hypnose spécialisé en psychonutrition (CFDC 2023)</li>
+                </ul>
+                <p>Dans le but d’enrichir mes connaissances et de faire évoluer ma pratique, je me forme régulièrement à différentes approches de la diététique et de la prise en charge des patients.</p>
+            </div>
+
 
     </div>
 </main>    
