@@ -5,6 +5,21 @@ controllers:
     type: attribute
 
 Homepage:
-    path: /
+    path: /home
     controller: "App/Controller/HomeController::index"
-    
+
+Recipes:
+    path: /recipes
+    controller: "App/Controller/RecipesController::index"
+
+About:
+    path: /about
+    controller: "App/Controller/AboutController::index"
+
+Services:
+    path: /services
+    controller: "App/Controller/ServicesController::index"
+
+Contact:
+    path: /contact
+    controller: "App/Controller/ContactController::index"

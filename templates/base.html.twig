@@ -51,20 +51,20 @@
                                 <div class="right">
                                 </div>
                             </div>
-                            <li class="nav-item {{ app.request.get('_route') == 'Homepage' ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ path('Homepage') }}">Accueil</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="">Recettes</a>
+                            <li class="nav-item">
+                                <a class="{% if 'home' in app.request.attributes.get('_route') %}active{% endif %}" href="{{ path('Homepage') }}">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Contact</a>
+                                <a class="{% if 'recipes' in app.request.attributes.get('_route') %}active{% endif %}" href="{{ path('Recipes') }}">Recettes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Mes services</a>
+                                <a class="{% if 'contact' in app.request.attributes.get('_route') %}active{% endif %}" href="{{ path('Contact') }}">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);">A propos</a>
+                                <a class="{% if 'services' in app.request.attributes.get('_route') %}active{% endif %}" href="{{ path('Services') }}">Mes services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="{% if 'about' in app.request.attributes.get('_route') %}active{% endif %}" href="{{ path('About') }}">A propos</a>
                             </li>
                         </ul>
                     </div>
