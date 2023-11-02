@@ -7,6 +7,10 @@ html {
     height: 100%;
 }
 body {
+	font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: normal;
     background-color: #67AFAC;
 }
 
@@ -188,6 +192,7 @@ i {
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 15px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 h2, h3 {
@@ -227,4 +232,8 @@ h2 {
 
 .btn {
 	background-color: #67AFAC;
+}
+
+.span {
+	text-decoration: underline;
 }

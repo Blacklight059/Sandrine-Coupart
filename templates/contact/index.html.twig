@@ -4,28 +4,29 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div id="main" class="col-lg-8 col-sm-11 mx-auto main">
+    <h1 class="mb-4">Formulaire de contact</h1>
+    <div class="row no-gutters">
 
+        {{ form_errors(formView) }}
 
-    {{ form_errors(formView) }}
-
-    {{ form_start(formView) }}
-        {{ form_row(formView.lastname) }}
-        {{ form_row(formView.firstname) }}
-        {{ form_row(formView.email) }}
-        {{ form_row(formView.message) }}
-        <button type="submit" class="btn">Envoyer</button>
-    {{ form_end(formView) }}    
-    This friendly message is coming from:
-    
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/33646/Documents/Studi/Evaluations/Projet-symfony/Sandrine-Coupart/sandrine-coupart-app/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/33646/Documents/Studi/Evaluations/Projet-symfony/Sandrine-Coupart/sandrine-coupart-app/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
+        {{ form_start(formView) }}
+            <div class="col-md-6">
+                {{ form_row(formView.lastname) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(formView.firstname) }}
+            </div>
+            <div class="col-md-12">
+                {{ form_row(formView.email) }}
+            </div>
+            <div class="col-md-12">
+                {{ form_row(formView.message) }}
+            </div>
+            <button type="submit" class="btn">Envoyer</button>
+        {{ form_end(formView) }}   
+    </div> 
 </div>
 {% endblock %}

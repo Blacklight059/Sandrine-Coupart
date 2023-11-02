@@ -8,13 +8,37 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+<div id="main" class="col-lg-10 col-sm-11 mx-auto main">
+    <h2 class="mb-4">Mes services</h2>
+    <h4 class="mb-4">Consultation en cabinet ou à domicile :</h3>
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/33646/Documents/Studi/Evaluations/Projet-symfony/Sandrine-Coupart/sandrine-coupart-app/src/Controller/ServicesController.php'|file_link(0) }}">src/Controller/ServicesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/33646/Documents/Studi/Evaluations/Projet-symfony/Sandrine-Coupart/sandrine-coupart-app/templates/services/index.html.twig'|file_link(0) }}">templates/services/index.html.twig</a></code></li>
+        <li>
+            <p>
+                <span>Perte de poids :</span>
+                " Pour une perte de poids durable , sans effets « yoyo » . Car vous êtes une personne à part entière avec des besoins qui vous sont propres , ma base de travail est  : votre alimentation quotidienne , vos dépenses journalières , vos contraintes … Je prends le temps de vous expliquer  » le pourquoi du comment  » à l’aide de schéma et tableaux car il est plus légitime d’appliquer ce que l’on comprends. Sur cette base , nous trouvons ensemble des compromis pour arriver à vos objectifs finaux. Tout est une question de fréquence , quantité et qualité nutritionnel. La prise en charge est complète de part les explications apportées mais également grâce à des recettes saines , gourmandes , faciles et rapides à effectuer que je vous apporte tout au long du suivi."
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>Rééquilibrage alimentaire :</span>
+                A part l’alimentation des parents , grands-parents , arrière grands-parents … nous n’avons pas d’éducation nutritionnel . Si des « erreurs alimentaires » sont à l’origine , nous les emportons bien souvent avec nous à l’heure de l’émancipation. Faire un point nutritionnel peut donc s’avérer utile pour tous.            
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>Intolérances &/Ou Allergies alimentaires :</span>
+                 Je vous accompagne pour garder un bon équilibre alimentaire et une variété de plat. Grâce à des recettes gourmandes et équilibrées , des ingrédients et aliments substitues.
+            </p>
+        </li>
+        <li>
+            <p>
+                <span>Alimentation du sportif :</span>
+                Car vous êtes une personne à part entière avec des besoins qui vous sont propres , ma base de travail est  : votre alimentation quotidienne , vos dépenses journalières , vos contraintes …Un sportif n’a pas les mêmes besoins qu’une personne ayant une activité physique régulière modérée. Je vous accompagne dans vos objectifs , afin d’avoir une alimentation en accord avec vos besoins.
+            </p>
+        </li>
     </ul>
+    <a href="{{ path('Contact') }}"><button type="submit" class="btn">Prendre rendez-vous</button></a>
+
+    
 </div>
 {% endblock %}
