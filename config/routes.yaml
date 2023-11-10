@@ -5,7 +5,7 @@ controllers:
     type: attribute
 
 Homepage:
-    path: /home
+    path: /
     controller: "App/Controller/HomeController::index"
 
 Recipes:
@@ -27,3 +27,25 @@ Contact:
 app_login:
     path: /login
     controller: "App:Controller/SecurityController::index"
+
+admin:
+    path: /admin
+    controller: "App:Controller/AdminController::index"
+
+admin_add:
+    path: /admin/add
+    controller: "App:Controller/AdminController::add"
+
+admin_remove:
+    path: /admin/_remove/{id}
+    controller: "App/Controller/AdminController::remove"
+    requirements:
+        id: '\d+'
+
+
+admin_edit:
+    path: /admin/_edit/{id}
+    controller: "App/Controller/AdminController::edit"
+    requirements:
+        id: '\d+'
+

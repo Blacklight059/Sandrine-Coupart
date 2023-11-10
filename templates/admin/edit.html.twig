@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification des patients{% endblock %}
+
+{% block body %}
+
+
+    {# Titre de la page #}
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="mt-30">Modification des patients</h2>
+        </div>
+    </div>
+
+    <div id="main" class="col-lg-8 col-sm-11 mx-auto main">
+        {{ form_start(form, {'method': 'POST', 'attr': {'novalidate': 'novalidate' }} ) }}
+
+        <div id="info" class="panel-collapse">
+            
+            {{ include('helpers/form/_group.html.twig', {
+                        'field': form['email']
+                    }) }}
+
+            {{ include('helpers/form/_group.html.twig', {
+                        'field': form['plainPassword']
+                    }) }}
+
+            {{ include('helpers/form/_group.html.twig', {
+                        'field': form['lastname']
+                    }) }}
+                    
+            {{ include('helpers/form/_group.html.twig', {
+                        'field': form['firstname']
+                    }) }}
+
+            {{ include('helpers/form/_group.html.twig', {
+                        'field': form['dietTypes']
+                    }) }}
+
+            {{ include('helpers/form/_group.html.twig', {
+                        'field': form['allergens']
+                    }) }}
+                    
+        </div>
+        <div class="row">
+            {% if not form.vars.valid %}
+            <div class="col-md-8 error">
+                <i class="fa fa-exclamation-triangle fa-fw">
+                Le formulaire contient des erreurs. Vérifiez les différentes rubriques.
+            </div>
+            {% else %}
+                <div class="col-md-8"></div>
+            {% endif %} 
+            <button type="submit" class="btn">Enregistrer</button>
+
+        </div>
+
+        {{ form_widget(form) }}
+
+        {{ form_end(form) }}
+
+    </div>
+
+
+{% endblock %}

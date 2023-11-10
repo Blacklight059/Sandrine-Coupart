@@ -35,11 +35,19 @@
                                 <li class="nav-item">
                                     <span class="nav-link">Bienvenue {{ app.user.firstname }}!</span>
                                 </li>
+                                {% if( app.user.roles[0] == 'ROLE_ADMIN') %}
+                                    <li class="nav-item {{ app.request.get('_route') == 'admin' ? 'active' : 'admin' }}">
+                                        <a class="nav-link" href="{{ path('admin') }}">Administration</a>
+                                    </li>                
+                                {% endif %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item {{ app.request.get('_route') == 'app_login' ? 'active' : '' }}">
+                                    <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                                </li>
                             {% endif %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
-
-                            </li>
                         </ul>
                     </div>
                 </nav>
