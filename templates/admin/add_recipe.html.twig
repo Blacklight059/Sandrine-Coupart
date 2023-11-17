@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container-fluid">
+    {# Titre de la page #}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Création des patients</h1>
+        </div>
+    </div>
+
+    <div id="main" class="col-lg-8 col-sm-11 mx-auto text-center main">
+    {{ form_errors(registrationForm2) }}
+
+    {{ form_start(registrationForm2) }}
+        {{ form_row(registrationForm2.name) }}
+        {{ form_row(registrationForm2.description) }}
+        {{ form_row(registrationForm2.preparationTime) }}
+        {{ form_row(registrationForm2.break) }}
+        {{ form_row(registrationForm2.cooking_time) }}
+        {{ form_row(registrationForm2.ingredients) }}
+        {{ form_row(registrationForm2.steps) }}
+        {{ form_row(registrationForm2.allergens) }}
+        {{ form_row(registrationForm2.dietTypes) }}
+        {{ form_row(registrationForm2.imgFilename) }}
+
+        <button type="submit" class="btn">Création</button>
+    {{ form_end(registrationForm2) }}
+
+    </div>
+</div>
+
+{% endblock %}

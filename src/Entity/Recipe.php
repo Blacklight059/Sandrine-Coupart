@@ -43,6 +43,9 @@ class Recipe
     #[ORM\ManyToMany(targetEntity: DietTypes::class, mappedBy: 'recipe')]
     private Collection $dietTypes;
 
+    #[ORM\Column(length: 255)]
+    private ?string $imgFilename = null;
+
     public function __construct()
     {
         $this->allergens = new ArrayCollection();
@@ -188,6 +191,18 @@ class Recipe
         if ($this->dietTypes->removeElement($dietType)) {
             $dietType->removeRecipe($this);
         }
+
+        return $this;
+    }
+
+    public function getImgFilename(): ?string
+    {
+        return $this->imgFilename;
+    }
+
+    public function setImgFilename(string $imgFilename): static
+    {
+        $this->imgFilename = $imgFilename;
 
         return $this;
     }

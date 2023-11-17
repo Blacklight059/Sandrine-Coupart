@@ -3,6 +3,12 @@
 {% block title %}Hello RecipesController!{% endblock %}
 
 {% block body %}
+{% if app.user %}
+    {% for allergen in user.Allergens %}
+            <li>{{ allergen.name|e }}</li>
+    {% endfor %}
+{% endif %}
+
 <style>
     
 </style>
@@ -13,6 +19,34 @@
             <div class="col-lg-12 mt-4">
                 <h1 class="page-header">Vos recettes</h1>
         </div>
+        {% for recipes in recipesConnect %}  
+            <div class="row">
+                <div id="main" class="col-lg-3 col-sm-4 mx-auto text-center main">
+                        <h2>{{ recipes.name }}</h2>            
+                            <div class="gallery_product d-inline col-lg-4 col-md-6 col-12 align-baseline">
+                                <a href="#" class="d-block mb-4">
+                                    <img src={{ asset('uploads/imgFilename/' ~ recipes.imgFilename) }} alt="recipe" id="img-profil" class="img-fluid img-thumbnail active">
+                                </a>
+                            </div>    
+                            <div class="d-inline align-text-top">
+                                <h5>Description</h5>
+                                <p>{{ recipes.description }}</p>
+                                <h5>Temps de préparation</h5>
+                                <p>{{ recipes.preparationTime }}</p>
+                                <h5>Temps de repos</h5>
+                                <p>{{ recipes.break }}</p>
+                                <h5>Temps de cuisson</h5>
+                                <p>{{ recipes.cookingTime }}</p>
+                                <h5>Liste des ingrédients</h5>
+                                <p>{{ recipes.ingredients }}</p>
+                                <h5>Les étapes à suivre</h5>
+                                <p>{{ recipes.steps }}</p>
+                                
+                            </div>
+                </div>
+            </div>
+        {% endfor %}
+
     {% endif %}
     <div class="row">
         <div class="col-lg-12 mt-4">

@@ -49,3 +49,25 @@ admin_edit:
     requirements:
         id: '\d+'
 
+admin_recipe:
+    path: /admin/_recipe
+    controller: "App:Controller/AdminController::index_recipe"
+
+
+admin_add_recipe:
+    path: /admin/add_recipe
+    controller: "App:Controller/AdminController::add_recipe"
+
+
+admin_edit_recipe:
+    path: /admin/_edit_recipe/{id}
+    controller: "App/Controller/AdminController::edit_recipe"
+    requirements:
+        id: '\d+'
+
+admin_remove_recipe:
+    path: /admin/_remove_recipe/{id}
+    controller: "App/Controller/AdminController::remove_recipe"
+    requirements:
+        id: '\d+'
+

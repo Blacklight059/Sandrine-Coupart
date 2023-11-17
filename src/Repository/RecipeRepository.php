@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Allergens;
 use App\Entity\Recipe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -36,13 +37,16 @@ class RecipeRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Recipe
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+   public function findRecipesWithNoAllergens($ids): ?array
+   {
+       return $this->createQueryBuilder('r')
+            ->select('r')
+            ->from(Allergens::class, 'a')
+            ->leftJoin('a.users', 'u')
+            ->where('a.id NOT IN (:ids)')
+            ->setParameter('ids', $ids)
+            ->getQuery()
+            ->getResult()
+       ;
+   }
 }

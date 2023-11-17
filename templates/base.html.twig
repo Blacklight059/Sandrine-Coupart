@@ -38,7 +38,10 @@
                                 {% if( app.user.roles[0] == 'ROLE_ADMIN') %}
                                     <li class="nav-item {{ app.request.get('_route') == 'admin' ? 'active' : 'admin' }}">
                                         <a class="nav-link" href="{{ path('admin') }}">Administration</a>
-                                    </li>                
+                                    </li>
+                                    <li class="nav-item {{ app.request.get('_route') == 'admin' ? 'active' : 'admin' }}">
+                                        <a class="nav-link" href="{{ path('admin_recipe') }}">Gestion des recettes</a>
+                                    </li>
                                 {% endif %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
