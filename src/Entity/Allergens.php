@@ -20,6 +20,7 @@ class Allergens
 
 
     #[ORM\ManyToMany(targetEntity: Recipe::class, inversedBy: 'allergens')]
+    #[ORM\JoinColumn(nullable: true)]
     private Collection $recipe;
 
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'Allergens')]

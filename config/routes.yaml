@@ -71,3 +71,8 @@ admin_remove_recipe:
     requirements:
         id: '\d+'
 
+_recipe:
+    path: /recipes/_recipe/{id}
+    controller: "App/Controller/RecipesController::show"
+    requirements:
+        id: '\d+'

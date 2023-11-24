@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Allergens;
+use App\Entity\DietTypes;
 use App\Entity\Recipe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -44,6 +45,19 @@ class RecipeRepository extends ServiceEntityRepository
             ->from(Allergens::class, 'a')
             ->leftJoin('a.users', 'u')
             ->where('a.id NOT IN (:ids)')
+            ->setParameter('ids', $ids)
+            ->getQuery()
+            ->getResult()
+       ;
+   }
+
+   public function findRecipesWithNoDietTypes($ids): ?array
+   {
+       return $this->createQueryBuilder('r')
+            ->select('r')
+            ->from(DietTypes::class, 'a')
+            ->leftJoin('a.users', 'u')
+            ->where('a.id IN (:ids)')
             ->setParameter('ids', $ids)
             ->getQuery()
             ->getResult()

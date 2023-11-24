@@ -46,10 +46,17 @@ class Recipe
     #[ORM\Column(length: 255)]
     private ?string $imgFilename = null;
 
+    #[ORM\Column]
+    private ?bool $free = null;
+
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Comment::class)]
+    private Collection $comments;
+
     public function __construct()
     {
         $this->allergens = new ArrayCollection();
         $this->dietTypes = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -203,6 +210,48 @@ class Recipe
     public function setImgFilename(string $imgFilename): static
     {
         $this->imgFilename = $imgFilename;
+
+        return $this;
+    }
+
+    public function isFree(): ?bool
+    {
+        return $this->free;
+    }
+
+    public function setFree(bool $free): static
+    {
+        $this->free = $free;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): static
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments->add($comment);
+            $comment->setRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): static
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getRecipe() === $this) {
+                $comment->setRecipe(null);
+            }
+        }
 
         return $this;
     }

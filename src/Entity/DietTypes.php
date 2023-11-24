@@ -19,6 +19,7 @@ class DietTypes
     private ?string $name = null;
 
     #[ORM\ManyToMany(targetEntity: Recipe::class, inversedBy: 'dietTypes')]
+    #[ORM\JoinColumn(nullable: true)]
     private Collection $recipe;
 
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'DietTypes')]

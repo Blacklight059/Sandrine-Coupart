@@ -17,23 +17,23 @@
     </div>
 
     <div id="main" class="col-lg-8 col-sm-11 mx-auto text-center main">
-    {{ form_errors(registrationForm2) }}
+        {{ form_errors(registrationForm2) }}
 
-    {{ form_start(registrationForm2) }}
-        {{ form_row(registrationForm2.name) }}
-        {{ form_row(registrationForm2.description) }}
-        {{ form_row(registrationForm2.preparationTime) }}
-        {{ form_row(registrationForm2.break) }}
-        {{ form_row(registrationForm2.cooking_time) }}
-        {{ form_row(registrationForm2.ingredients) }}
-        {{ form_row(registrationForm2.steps) }}
-        {{ form_row(registrationForm2.allergens) }}
-        {{ form_row(registrationForm2.dietTypes) }}
-        {{ form_row(registrationForm2.imgFilename) }}
+        {{ form_start(registrationForm2) }}
+            {{ form_row(registrationForm2.name) }}
+            {{ form_row(registrationForm2.description) }}
+            {{ form_row(registrationForm2.preparationTime) }}
+            {{ form_row(registrationForm2.break) }}
+            {{ form_row(registrationForm2.cooking_time) }}
+            {{ form_row(registrationForm2.ingredients) }}
+            {{ form_row(registrationForm2.steps) }}
+            {{ form_row(registrationForm2.allergens) }}
+            {{ form_row(registrationForm2.dietTypes) }}
+            {{ form_row(registrationForm2.imgFilename) }}
+            {{ form_row(registrationForm2.free) }}
 
-        <button type="submit" class="btn">Création</button>
-    {{ form_end(registrationForm2) }}
-
+            <button type="submit" class="btn">Création</button>
+        {{ form_end(registrationForm2) }}
     </div>
 </div>
 

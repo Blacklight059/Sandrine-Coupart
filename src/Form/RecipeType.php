@@ -8,6 +8,7 @@ use App\Entity\Recipe;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -144,6 +145,15 @@ class RecipeType extends AbstractType
                 'class' => DietTypes::class,
                 'choice_label' => 'name',
                 'multiple' => true
+            ])
+            ->add('dietTypes', EntityType::class, [
+                'class' => DietTypes::class,
+                'choice_label' => 'name',
+                'multiple' => true
+            ])
+            ->add('free', CheckboxType::class, [
+                'label'    => 'Cochez si vous voulez rendre cette recette gratuite',
+                'required' => false,
             ])
         ;
     }

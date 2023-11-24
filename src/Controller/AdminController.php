@@ -196,7 +196,7 @@ class AdminController extends AbstractController
 
                  // updates the 'imgFilename' property to store the PDF file name
                  // instead of its contents
-                 $recipe->setImageFilename($newFilename);
+                 $recipe->setImgFilename($newFilename);
              }
 
              // ... persist the $product variable or any other work

@@ -31,6 +31,17 @@ class UserFixtures extends Fixture
         $admin->setRoles(['ROLE_ADMIN']);
         $manager->persist($admin);
 
+        $userTest = new User();
+        $userTest->setEmail('steven_gomes@@hotmail.fr');
+        $userTest->setPassword(
+            $this->passwordEncoder->hashPassword($admin, 'steven')
+        );
+        $userTest->setLastname('GOMES');
+        $userTest->setFirstname('Steven');
+
+        $userTest->setRoles(['ROLE_USER']);
+        $manager->persist($userTest);
+
         $faker = Faker\Factory::create('fr-FR');
 
         for($usr2 = 1; $usr2 <= 5; $usr2++) {
